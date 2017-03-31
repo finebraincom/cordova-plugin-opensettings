@@ -140,7 +140,7 @@
 		result = [self do_open:@"prefs:root=Wallpaper"];
 	} 
 	else if ([key isEqualToString:@"wifi"]) {
-		result = [self do_open:@"prefs:root=WIFI"];
+		result = [self do_open:@"App-Prefs:root=WIFI"];
 	} 
 	else {
 		pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Invalid Action"];

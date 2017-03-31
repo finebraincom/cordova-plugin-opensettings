@@ -6,7 +6,7 @@
  * Copyright (c) 2011, IBM Corporation
  */
 
-package com.phonegap.plugins.nativesettings;
+package com.phonegap.plugins.opensettings;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -31,7 +31,7 @@ public class NativeSettings extends CordovaPlugin {
 
         //Information on settings can be found here:
         //http://developer.android.com/reference/android/provider/Settings.html
-		
+
 		action = args.getString(0);
 		Intent intent = null;
 
@@ -137,12 +137,12 @@ public class NativeSettings extends CordovaPlugin {
              callbackContext.sendPluginResult(new PluginResult(status, result));
         	return false;
         }
-        
+
         if(args.length() > 1 && args.getBoolean(1)) {
         	intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         }
         this.cordova.getActivity().startActivity(intent);
-        
+
         callbackContext.sendPluginResult(new PluginResult(status, result));
         return true;
     }

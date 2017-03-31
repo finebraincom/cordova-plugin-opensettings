@@ -8,13 +8,13 @@ The plugin allows you to open OS settings on iOS 8/9 and Android, via cordova-ba
 It will be saved to the config.xml file
 
 ```bash
-cordova plugin (add|rm) https://github.com/guyromb/Cordova-open-native-settings.git --save
+cordova plugin (add|rm) https://github.com/taoyuan/cordova-plugin-opensettings.git --save
 ```
 
 or via npm (It will be saved to the package.json file)
 
 ```bash
-npm (install|rm) https://github.com/guyromb/Cordova-open-native-settings.git --save
+npm (install|rm) https://github.com/taoyuan/cordova-plugin-opensettings.git --save
 ```
 
 ##Using the plugin (opens Location Settings in Android and Application Settings in iOS)
@@ -27,8 +27,9 @@ cordova.plugins.settings.open(setting_constant, success_callback, failure_callba
 
 ```js
 if (window.cordova && window.cordova.plugins.settings) {
-    console.log('openNativeSettingsTest is active');
-    window.cordova.plugins.settings.open("wifi", function() {
+    console.log('openSettingsTest is active');
+    window.cordova.plugins.settings.open("wifi", 
+        function() {
             console.log('opened settings');
         },
         function () {
@@ -36,7 +37,7 @@ if (window.cordova && window.cordova.plugins.settings) {
         }
     );
 } else {
-    console.log('openNativeSettingsTest is not active!');
+    console.log('openSettingsTest is not active!');
 }
 ```
 

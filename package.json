@@ -1,9 +1,9 @@
 {
-  "name": "nativesettingsopener",
+  "name": "cordova-plugin-opensettings",
   "version": "1.2",
-  "description": "Native settings opener for Cordova 3.0",
+  "description": "Native settings opener for Cordova 4.0",
   "cordova": {
-    "id": "com.phonegap.plugins.nativesettingsopener",
+    "id": "io.bbgo.cordova.opensettings",
     "platforms": [
       "android",
       "ios"
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/guyromb/Cordova-open-native-settings"
+    "url": "git+https://github.com/taoyuan/cordova-plugin-opensettings"
   },
   "keywords": [
     "native-settings",
@@ -22,30 +22,33 @@
   "engines": [
     {
       "name": "cordova",
-      "version": ">=3.0.0"
+      "version": ">=4.0.0"
     }
   ],
-  "author": "Guy Rombaut <admin@gsrweb.net>",
+  "author": "Yuan Tao <towyuan@outlook.com>",
   "contributors": [
     {
-      "username": "guyromb"
+      "name": "Guy Rombaut <admin@gsrweb.net>"
     },
     {
-      "username": "deefactorial"
+      "name": "guyromb"
     },
     {
-      "username": "selahssea"
+      "name": "deefactorial"
     },
     {
-      "username": "asmund1"
+      "name": "selahssea"
     },
     {
-      "username": "perlish"
+      "name": "asmund1"
+    },
+    {
+      "name": "perlish"
     }
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/guyromb/Cordova-open-native-settings/issues"
+    "url": "https://github.com/taoyuan/cordova-plugin-opensettings"
   },
-  "homepage": "https://github.com/guyromb/Cordova-open-native-settings#readme"
+  "homepage": "https://github.com/taoyuan/cordova-plugin-opensettings#readme"
 }
