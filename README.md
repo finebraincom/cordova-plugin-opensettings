@@ -1,54 +1,53 @@
-#NativeSettings plugin for Cordova
+# Open Settings Cordova Plugin
 
-The plugin allows you to open OS settings on iOS 8/9 and Android, via cordova-based app. For example, it will allow you to open the keyboard settings, Wifi, bluetooth etc (full list below).
+> The plugin allows you to open OS settings on iOS 8/9 and Android, via cordova-based app. For example, it will allow you to open the keyboard settings, Wifi, bluetooth etc (full list below).
 
-** NO SUPPORT FOR IOS 10 SINCE APPLE DISABLED THIS FUNCTIONALITY **
-
-##Adding/Removing the Plugin 
+## Adding/Removing the Plugin 
 It will be saved to the config.xml file
 
 ```bash
-cordova plugin (add|rm) https://github.com/taoyuan/cordova-plugin-opensettings.git --save
+cordova plugin (add|rm) cordova-plugin-opensettings --save
 ```
 
 or via npm (It will be saved to the package.json file)
 
 ```bash
-npm (install|rm) https://github.com/taoyuan/cordova-plugin-opensettings.git --save
+npm (install|rm) cordova-plugin-opensettings --save
 ```
 
-##Using the plugin (opens Location Settings in Android and Application Settings in iOS)
+## Using the plugin (opens Location Settings in Android and Application Settings in iOS)
 
-```
+```js
 cordova.plugins.settings.open(setting_constant, success_callback, failure_callback);
 ```
 
-###Example for iOS and Android - open Wifi settings
+### Example for iOS and Android - open Wifi settings
 
 ```js
 if (window.cordova && window.cordova.plugins.settings) {
-    console.log('openSettingsTest is active');
-    window.cordova.plugins.settings.open("wifi", 
-        function() {
-            console.log('opened settings');
-        },
-        function () {
-            console.log('failed to open settings');
-        }
-    );
+  console.log('openSettingsTest is active');
+  window.cordova.plugins.settings.open("wifi", 
+    function() {
+      console.log('opened settings');
+    },
+    function () {
+      console.log('failed to open settings');
+    }
+  );
 } else {
-    console.log('openSettingsTest is not active!');
+  console.log('openSettingsTest is not active!');
 }
 ```
 
 In Android, by default it is opened in the same application as a new activity, the hardware back button will bring the user back to the previous activity (the app). In order to open settings as a new application (two applications will appear in "recent/opened" apps list) the following code can be used:
 `window.cordova.plugins.settings.open(["wifi", true], function() {}, function() {}); ....`
 
-##Settings Options
+## Settings Options
 You can use any constant from the following list:
 * I tried to map Android and iOS together, however, they are not always the same.
 
-```
+```js
+[
     "about", // ios
     "accessibility", // ios, android
     "account", // ios, android
@@ -116,19 +115,20 @@ You can use any constant from the following list:
     "wifi_ip", // android
     "wifi", // ios, android
     "wireless" // android
+]
 ```
 
-##Notes
+## Notes
 * Android plugin based on the following information: https://developer.android.com/reference/android/provider/Settings.html#ACTION_DREAM_SETTINGS
 * iOS plugin based on the following information: https://gist.github.com/phynet/471089a51b8f940f0fb4
 * In iOS, this plugin generates a URL scheme for the *-Info.plist configurations file.
 * The plugin for Android is based on the forked repository and was refactored. The iOS part was built from skretch.
 
-##License
+## License
 ```
 The MIT License
 
-Copyright (c) 2016 Guy Rombaut
+Copyright (c) 2017 Yuan Tao
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

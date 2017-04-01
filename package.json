@@ -3,7 +3,7 @@
   "version": "1.2",
   "description": "Native settings opener for Cordova 4.0",
   "cordova": {
-    "id": "io.bbgo.cordova.opensettings",
+    "id": "cordova-plugin-opensettings",
     "platforms": [
       "android",
       "ios"
