@@ -6,9 +6,16 @@
     NSURL *url = [NSURL URLWithString:scheme];
     UIApplication *application = [UIApplication sharedApplication];
     if ([application canOpenURL:url]) {
-        [application openURL:url options:@{} completionHandler:^(BOOL success) {
-            NSLog(@"Open %@: %d", scheme, success);
-        }];
+        if ([application respondsToSelector:@selector(openURL:options:completionHandler:)]) {
+            [application openURL:url options: @{} completionHandler:^(BOOL success){
+                if(success == YES){
+                    NSLog(@"Open %@: %d", scheme, success);
+                }
+            }];
+        }else{
+            BOOL success = [application openURL:url];
+            NSLog(@"Open %@: %d",scheme,success);
+        }
         return YES;
     }
     return NO;
